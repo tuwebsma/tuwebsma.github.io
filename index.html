@@ -1,214 +1,512 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Freelancer-Tu Web SMA</title>
-        <link rel="icon" type="image/x-icon" href="assets/img/tuWeb.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top"><img src="./assets/img/tuWeb.png" alt="" width="70px" height="70px" style="border-radius: 50%" ></a>
-                <button class="navbar-toggler" type="button" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#navbarResponsive" 
-        aria-controls="navbarResponsive" 
-        aria-expanded="false" 
-        aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tu Web SMA — Especialistas en desarrollo web, diseño gráfico y aplicaciones digitales. Soluciones modernas para emprendedores y empresas." />
+  <meta name="author" content="Tu Web SMA" />
+  <meta name="keywords" content="diseño web, desarrollo web, apps, San Martín de los Andes, Buenos Aires, freelancer, HTML, CSS, JavaScript" />
+  <meta property="og:title" content="Tu Web SMA — Diseño Web &amp; Desarrollo Digital" />
+  <meta property="og:description" content="Creamos soluciones digitales modernas, funcionales y atractivas para potenciar tu presencia online." />
+  <meta property="og:type" content="website" />
 
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#about">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projectos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Contacto</a></li>
-                    </ul>
-                </div>
+  <title>Tu Web SMA — Diseño Web &amp; Desarrollo Digital</title>
+  <link rel="icon" type="image/png" href="assets/img/tuWeb.png" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body id="page-top">
+
+  <!-- ===================== NAVBAR ===================== -->
+  <nav class="tws-nav" id="mainNav" aria-label="Navegación principal">
+    <div class="container">
+      <a class="nav-logo" href="#page-top" aria-label="Tu Web SMA — Inicio">
+        <img src="./assets/img/tuWeb.png" alt="Logo Tu Web SMA" />
+        <span class="nav-logo-text">Tu Web SMA</span>
+      </a>
+
+      <ul class="nav-links" id="navMenu" role="list">
+        <li><a href="#hero">Inicio</a></li>
+        <li><a href="#services">Servicios</a></li>
+        <li><a href="#about">Sobre nosotras</a></li>
+        <li><a href="#projects">Proyectos</a></li>
+        <li><a href="#contact" class="nav-cta">Contacto</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero" id="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container hero-container">
+
+      <div class="hero-content animate-on-scroll visible">
+        <div class="hero-badge">
+          <span class="dot" aria-hidden="true"></span>
+          CABA · San Martín, Neuquén · Argentina
+        </div>
+
+        <h1>
+          Diseño web que<br>
+          <span class="highlight">impulsa tu negocio</span>
+        </h1>
+
+        <p class="hero-sub">
+          Somos un equipo creativo especializado en desarrollo web, diseño gráfico y aplicaciones digitales. Transformamos tus ideas en experiencias únicas que conectan con tu audiencia.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn-primary-hero" id="hero-projects-btn">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+            Ver proyectos
+          </a>
+          <a href="#contact" class="btn-outline-hero" id="hero-contact-btn">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            Contactarnos
+          </a>
+        </div>
+
+        <div class="hero-stats" aria-label="Estadísticas">
+          <div class="stat-item">
+            <div class="stat-number">4+</div>
+            <div class="stat-label">Proyectos entregados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes satisfechos</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Años de experiencia</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ===================== SERVICES ===================== -->
+  <section class="services section" id="services" aria-labelledby="services-title">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <div class="section-tag">
+          <i class="fas fa-star" aria-hidden="true"></i> Lo que hacemos
+        </div>
+        <h2 class="section-title" id="services-title">Nuestros servicios</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-sub">Ofrecemos soluciones digitales completas para llevar tu proyecto al siguiente nivel</p>
+      </div>
+
+      <div class="grid-4" role="list" aria-label="Servicios ofrecidos">
+
+        <article class="service-card animate-on-scroll stagger-1" role="listitem">
+          <div class="service-icon icon-blue" aria-hidden="true">
+            <i class="fas fa-code"></i>
+          </div>
+          <h4>Desarrollo Web</h4>
+          <p>Creamos sitios web modernos, rápidos y responsivos usando HTML, CSS y JavaScript con las mejores prácticas de la industria.</p>
+        </article>
+
+        <article class="service-card animate-on-scroll stagger-2" role="listitem">
+          <div class="service-icon icon-cyan" aria-hidden="true">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h4>Apps Móviles</h4>
+          <p>Desarrollamos aplicaciones móviles funcionales y atractivas adaptadas a las necesidades específicas de tu negocio.</p>
+        </article>
+
+        <article class="service-card animate-on-scroll stagger-3" role="listitem">
+          <div class="service-icon icon-purple" aria-hidden="true">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h4>Diseño Gráfico</h4>
+          <p>Diseñamos identidades visuales, logotipos y material gráfico que transmiten la esencia y valores de tu marca.</p>
+        </article>
+
+        <article class="service-card animate-on-scroll stagger-4" role="listitem">
+          <div class="service-icon icon-green" aria-hidden="true">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h4>Presencia Digital</h4>
+          <p>Te ayudamos a posicionarte online con estrategias de diseño y contenido que atraen y convierten a tu audiencia ideal.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT / CÓMO TRABAJAMOS ===================== -->
+  <section class="about section" id="about" aria-labelledby="about-title">
+    <div class="container">
+
+      <!-- Encabezado -->
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <div class="section-tag">
+          <i class="fas fa-users" aria-hidden="true"></i> Sobre nosotras
+        </div>
+        <h2 class="section-title" id="about-title">Cómo trabajamos</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-sub">Trabajamos de forma virtual y acompañamos a cada cliente en todo el proceso, desde la primera idea hasta la entrega final</p>
+      </div>
+
+      <!-- Info general + imagen -->
+      <div class="grid-1-2" style="margin-bottom: 4rem;">
+        <div class="about-image-wrap animate-on-scroll">
+          <img src="assets/img/about-team.jpg" alt="Equipo de Tu Web SMA colaborando" loading="lazy" />
+          <div class="about-image-badge" aria-hidden="true">
+            <div class="badge-icon">✨</div>
+            <div class="badge-text">
+              <strong>2+</strong>
+              <span>Años creando</span>
             </div>
+          </div>
+        </div>
+
+        <div class="about-text animate-on-scroll stagger-2">
+          <p>
+            Somos un equipo de creadoras apasionadas por la tecnología y el diseño. Nos especializamos en el desarrollo de páginas web y aplicaciones, combinando creatividad con conocimientos técnicos para ofrecer soluciones digitales modernas, funcionales y atractivas.
+          </p>
+          <p>
+            Trabajamos de manera <strong style="color: var(--primary-light);">100% virtual</strong>, lo que nos permite atender clientes en cualquier lugar de Argentina. Mantenemos <strong style="color: var(--primary-light);">reuniones constantes</strong> con el cliente para revisar avances, definir cambios y asegurarnos de que el resultado sea exactamente lo que necesitan.
+          </p>
+          <p>
+            Ofrecemos <strong style="color: var(--primary-light);">pagos en 2 cuotas</strong> para que el proyecto sea accesible, y los <strong style="color: var(--primary-light);">precios se conversan y adaptan</strong> a cada proyecto y necesidad particular. Creemos que una buena comunicación es la base de un buen trabajo.
+          </p>
+
+          <div class="about-skills" role="list" aria-label="Tecnologías que usamos" style="margin-top: 1.5rem;">
+            <span class="skill-tag" role="listitem"><i class="fab fa-html5" aria-hidden="true"></i> HTML5</span>
+            <span class="skill-tag" role="listitem"><i class="fab fa-css3-alt" aria-hidden="true"></i> CSS3</span>
+            <span class="skill-tag" role="listitem"><i class="fab fa-js" aria-hidden="true"></i> JavaScript</span>
+            <span class="skill-tag" role="listitem"><i class="fab fa-bootstrap" aria-hidden="true"></i> Bootstrap</span>
+            <span class="skill-tag" role="listitem"><i class="fas fa-mobile-alt" aria-hidden="true"></i> Responsive</span>
+            <span class="skill-tag" role="listitem"><i class="fas fa-paint-brush" aria-hidden="true"></i> Diseño Gráfico</span>
+            <span class="skill-tag" role="listitem"><i class="fab fa-github" aria-hidden="true"></i> GitHub</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proceso de trabajo -->
+      <div class="process-section animate-on-scroll">
+        <div class="text-center" style="margin-bottom: 2.5rem;">
+          <h3 class="process-title">Nuestro proceso paso a paso</h3>
+          <p style="color: rgba(255,255,255,0.5); font-size: 0.95rem;">Así acompañamos tu proyecto de principio a fin</p>
+        </div>
+        <div class="process-steps" role="list" aria-label="Pasos del proceso de trabajo">
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">01</div>
+            <div class="step-icon" aria-hidden="true"><i class="fas fa-comments"></i></div>
+            <h4>Reunión inicial</h4>
+            <p>Nos contás tu idea, tus objetivos y tus necesidades. Escuchamos y hacemos preguntas para entender bien el proyecto.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">02</div>
+            <div class="step-icon icon-cyan" aria-hidden="true"><i class="fas fa-file-contract"></i></div>
+            <h4>Definición y presupuesto</h4>
+            <p>Definimos el alcance del proyecto y acordamos el presupuesto. Los precios son flexibles y adaptados a cada caso.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">03</div>
+            <div class="step-icon icon-purple" aria-hidden="true"><i class="fas fa-pencil-ruler"></i></div>
+            <h4>Diseño y planificación</h4>
+            <p>Planificamos la estructura, la paleta de colores y el estilo visual antes de ponernos a programar.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">04</div>
+            <div class="step-icon icon-green" aria-hidden="true"><i class="fas fa-code"></i></div>
+            <h4>Desarrollo</h4>
+            <p>Programamos la página o aplicación manteniendo contacto constante para que siempre estés al tanto del avance.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">05</div>
+            <div class="step-icon" aria-hidden="true" style="background: rgba(251,191,36,0.12); color: #FCD34D; border: 1px solid rgba(251,191,36,0.25);"><i class="fas fa-eye"></i></div>
+            <h4>Revisión con el cliente</h4>
+            <p>Mostramos el avance para que puedas ver cómo va quedando y darnos tu feedback en tiempo real.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">06</div>
+            <div class="step-icon" aria-hidden="true" style="background: rgba(239,68,68,0.12); color: #FCA5A5; border: 1px solid rgba(239,68,68,0.25);"><i class="fas fa-edit"></i></div>
+            <h4>Correcciones y ajustes</h4>
+            <p>Realizamos todos los cambios necesarios hasta que el resultado sea exactamente el que buscabas.</p>
+          </div>
+
+          <div class="process-step" role="listitem">
+            <div class="step-number" aria-hidden="true">07</div>
+            <div class="step-icon icon-cyan" aria-hidden="true"><i class="fas fa-check-circle"></i></div>
+            <h4>Entrega final</h4>
+            <p>Entregamos el proyecto completo y listo para usar. Seguimos disponibles para cualquier consulta posterior.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section class="projects section" id="projects" aria-labelledby="projects-title">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <div class="section-tag">
+          <i class="fas fa-folder-open" aria-hidden="true"></i> Portafolio
+        </div>
+        <h2 class="section-title" id="projects-title">Proyectos destacados</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-sub">Una muestra de los trabajos que hemos realizado para nuestros clientes</p>
+      </div>
+
+      <div class="grid-2" role="list" aria-label="Proyectos">
+
+        <!-- BG360 -->
+        <article class="project-card animate-on-scroll stagger-1" role="listitem">
+          <div class="project-img-wrap">
+            <img class="project-img" src="assets/img/Captura de pantalla 2025-05-09 185840.png" alt="Captura del sitio BG360 Gimnasio" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Sitio Web Corporativo</span>
+            <h4>BG360 Gimnasio</h4>
+            <p>Página web creada para Gonzalo Basulado con el objetivo de atraer más clientes a su gimnasio. Diseño atractivo orientado a conversión. En colaboración con Lola Castro.</p>
+            <a href="https://bg360.com.ar/" target="_blank" rel="noopener" class="project-link" id="bg360-link" aria-label="Ver sitio BG360 (abre en nueva pestaña)">
+              Ver proyecto <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- Pomodoro -->
+        <article class="project-card animate-on-scroll stagger-2" role="listitem">
+          <div class="project-img-wrap">
+            <img class="project-img" src="assets/img/ac4aba24-f690-4967-8075-de13ee6b5e55.png" alt="App Pomodoro Timer" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Aplicación Web</span>
+            <h4>Pomodoro Timer</h4>
+            <p>Aplicación Pomodoro como cronómetro para estudio, entrenamiento y otras actividades. Interfaz limpia y funcional para maximizar la productividad.</p>
+            <div style="margin-top: auto;">
+              <details>
+                <summary class="project-link" style="cursor:pointer; list-style:none;" id="pomodoro-link-toggle">
+                  Ver QR <i class="fas fa-qrcode" aria-hidden="true"></i>
+                </summary>
+                <div class="qr-wrap" style="margin-top:0.75rem;">
+                  <img src="assets/img/frame.png" alt="Código QR del proyecto Pomodoro" width="130" height="130" />
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <!-- NASA -->
+        <article class="project-card animate-on-scroll stagger-3" role="listitem">
+          <div class="project-img-wrap">
+            <img class="project-img" src="assets/img/nasa.jpg" alt="App Imágenes NASA" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">Aplicación Web</span>
+            <h4>Imágenes NASA</h4>
+            <p>Aplicación que muestra las imágenes del día de la NASA. Podés ver las de los últimos cinco días o elegir cualquier fecha que quieras explorar.</p>
+            <div style="margin-top: auto;">
+              <details>
+                <summary class="project-link" style="cursor:pointer; list-style:none;" id="nasa-link-toggle">
+                  Ver QR <i class="fas fa-qrcode" aria-hidden="true"></i>
+                </summary>
+                <div class="qr-wrap" style="margin-top:0.75rem;">
+                  <img src="assets/img/Captura de pantalla 2025-05-24 182643.png" alt="Código QR del proyecto NASA" width="130" height="130" />
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+        <!-- App Danza -->
+        <article class="project-card animate-on-scroll stagger-4" role="listitem">
+          <div class="project-img-wrap">
+            <img class="project-img" src="assets/img/httpsplacehold.co120x120E11D48FFFFFFtext=App+Danza&font=inter.png" alt="App Danza Silvina Mazzuca" loading="lazy" style="object-fit: cover; object-position: center;" />
+          </div>
+          <div class="project-body">
+            <span class="project-badge">App Móvil</span>
+            <h4>App Danza</h4>
+            <p>Aplicación de danza creada para Silvina Mazzuca. Herramienta de organización para horarios, alumnas y eventos de su academia de danza.</p>
+            <div style="margin-top: auto;">
+              <details>
+                <summary class="project-link" style="cursor:pointer; list-style:none;" id="danza-link-toggle">
+                  Ver QR <i class="fas fa-qrcode" aria-hidden="true"></i>
+                </summary>
+                <div class="qr-wrap" style="margin-top:0.75rem;">
+                  <img src="assets/img/9a4e66ba99531848e9a2f62ec90e87ae.png" alt="Código QR de App Danza" width="130" height="130" />
+                </div>
+              </details>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section class="contact section" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3.5rem;">
+        <div class="section-tag">
+          <i class="fas fa-paper-plane" aria-hidden="true"></i> Contacto
+        </div>
+        <h2 class="section-title" id="contact-title">¿Hablamos?</h2>
+        <div class="divider" aria-hidden="true"></div>
+        <p class="section-sub">Estamos listas para escuchar tu proyecto y hacerlo realidad</p>
+      </div>
+
+      <div class="grid-3" role="list" aria-label="Información de contacto">
+
+        <div class="contact-card animate-on-scroll stagger-1" role="listitem">
+          <div class="contact-icon" aria-hidden="true">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <h4>Ubicación</h4>
+          <p>CABA, Buenos Aires<br>San Martín, Neuquén</p>
+        </div>
+
+        <div class="contact-card animate-on-scroll stagger-2" role="listitem">
+          <div class="contact-icon" aria-hidden="true">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <h4>Email</h4>
+          <a href="mailto:tuwebsma@gmail.com" id="contact-email">tuwebsma@gmail.com</a>
+        </div>
+
+        <div class="contact-card animate-on-scroll stagger-3" role="listitem">
+          <div class="contact-icon" aria-hidden="true">
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <h4>Teléfono / WhatsApp</h4>
+          <a href="https://wa.me/5492944673511" target="_blank" rel="noopener" id="contact-whatsapp">+54 9 (294) 467-3511</a>
+        </div>
+
+      </div>
+
+      <!-- CTA buttons -->
+      <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <a href="mailto:tuwebsma@gmail.com" class="btn-primary-hero" id="cta-email-btn">
+          <i class="fas fa-envelope" aria-hidden="true"></i>
+          Enviar email
+        </a>
+        <a href="https://wa.me/5492944673511" target="_blank" rel="noopener" class="btn-outline-hero" id="cta-whatsapp-btn">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          WhatsApp
+        </a>
+        <a href="https://www.instagram.com/tuweb_sma/" target="_blank" rel="noopener" class="btn-outline-hero" id="cta-instagram-btn">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+          Instagram
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer-full" role="contentinfo">
+    <div class="container footer-inner">
+
+      <!-- Logo + descripción -->
+      <div class="footer-brand">
+        <a href="#page-top" class="nav-logo" style="margin-bottom: 0.75rem; display: inline-flex;">
+          <img src="./assets/img/tuWeb.png" alt="Logo Tu Web SMA" style="width:40px; height:40px;" />
+          <span class="nav-logo-text">Tu Web SMA</span>
+        </a>
+        <p class="footer-desc">Diseño web, apps y soluciones digitales modernas para emprendedores y empresas.</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-social-col">
+        <h5 class="footer-col-title">Redes sociales</h5>
+        <nav class="social-links-footer" aria-label="Redes sociales">
+          <a href="https://www.instagram.com/tuweb_sma/" target="_blank" rel="noopener" class="social-link" id="footer-instagram" aria-label="Instagram">
+            <i class="fab fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="https://github.com/tuwebsma" target="_blank" rel="noopener" class="social-link" id="footer-github" aria-label="GitHub">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
+          <a href="mailto:tuwebsma@gmail.com" class="social-link" id="footer-email" aria-label="Email">
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/5492944673511" target="_blank" rel="noopener" class="social-link" id="footer-whatsapp" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase">Tu Web SMA</h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Tecnicas en Programación-Diseñadoras Web-Diseñadoras Grafica-Freelancer</h2>
-                        <a class="btn btn-primary" href="#about">Empezar</a>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- About-->
-        <section class="about-section text-center" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="text-white mb-4">Sobre nosotras</h2>
-                        <p class="text-white-50"> Somos un equipo de creadoras apasionadas por la tecnología y el diseño. Nos especializamos en el desarrollo de páginas web y aplicaciones, combinando creatividad con conocimientos técnicos para ofrecer soluciones digitales modernas, funcionales y atractivas. </p> <p class="text-white-50"> Contamos con experiencia en programación (HTML, CSS, JavaScript, Bootstrap), diseño gráfico y diseño web. Nuestro objetivo es ayudar a emprendedores, profesionales y empresas a potenciar su presencia online con proyectos personalizados y de calidad. </p> <p class="text-white-50"> Creemos que cada idea merece ser transformada en una experiencia digital única. Por eso trabajamos de manera cercana con nuestros clientes, escuchando sus necesidades y aportando nuestra visión creativa para lograr resultados que realmente marquen la diferencia. </p>
-                    </div>
-                </div>
-                <img class="img-fluid" src="assets/img/11.png" alt="..." />
-            </div>
-        </section>
-        <!-- Projects-->
-        <section class="projects-section bg-light" id="projects">
-            <div class="container px-4 px-lg-5">
-                <!-- Featured Project Row-->
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/Captura de pantalla 2025-05-09 185840.png" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>BG360</h4>
-                            <p class="text-black-50 mb-0">Página BG360 creada para Gonzalo Basulado con el objetivo de atraer más clientes a su gimnasio. En colaboración con Lola Castro.
-                            </p>
-                            <a href="https://bg360.com.ar/" class="demo mt-3 d-inline-block">Link</a>
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- Project One Row-->
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center align-items-stretch">
-                    <!-- Columna de imagen -->
-                    <div class="col-lg-6">
-                      <div class="h-100">
-                        <img class="img-fluid h-100 w-100 object-fit-cover" src="assets/img/ac4aba24-f690-4967-8075-de13ee6b5e55.png" alt="..." />
-                      </div>
-                    </div>
-                  
-                    <!-- Columna de texto -->
-                    <div class="col-lg-6">
-                      <div class="bg-black text-center h-100 d-flex">
-                        <div class="project-text w-100 my-auto text-center text-lg-left p-4">
-                          <h4 class="text-white">Pomodoro</h4>
-                          <p class="mb-0 text-white-50">Aplicacion Pomodoro. Una app que sirve como cronometro para estudio, correr u otras actividades.</p>
-                            <details>
-                                <summary class="demo mt-3" style="cursor: pointer;">Link</summary>
-                                <img src="assets/img/frame.png" alt="Pomodoro demo" class="img-fluid mt-3" width="200" height="100"/>
-                            </details>
-                              
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                <!-- Project Two Row-->
-                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center align-items-stretch">
-                    <!-- Columna de texto -->
-                    <div class="col-lg-6">
-                        <div class="bg-black text-center h-100 d-flex">
-                        <div class="project-text w-100 my-auto text-center text-lg-left p-4">
-                            <h4 class="text-white">Imágenes NASA</h4>
-                            <p class="mb-0 text-white-50">
-                            Una aplicación que te va a mostrar las imágenes del día de la NASA. Podés ver las de los últimos cinco días o incluso elegir la fecha que quieras ver.
-                            </p>
-                            <details class="mt-3">
-                            <summary class="demo" style="cursor: pointer;">Link</summary>
-                            <img src="assets/img/Captura de pantalla 2025-05-24 182643.png" alt="Nasa demo" class="img-fluid mt-3" width="200" height="100"/>
-                            </details>
-                        </div>
-                        </div>
-                    </div>
-                    <!-- Columna de imagen -->
-                    <div class="col-lg-6">
-                        <div class="h-100">
-                        <img class="img-fluid h-100 w-100 object-fit-cover" src="assets/img/nasa.jpg" alt="Imagen NASA" />
-                        </div>
-                    </div>
-                </div>
-                <div class="row gx-0 mb-4 mb-lg-5 align-items-center mt-5">
-                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="assets/img/httpsplacehold.co120x120E11D48FFFFFFtext=App+Danza&font=inter.png" alt="..." /></div>
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="featured-text text-center text-lg-left">
-                            <h4>App Danza</h4>
-                            <p class="text-black-50 mb-0">Aplicancion de danza creada para Silvina Mazzuca.Con el objetivo de tener una mejor organizacion de sus horarios, almunas y eventos.
-                            </p>
-                            <details class="mt-3">
-                            <summary class="demo" style="cursor: pointer;">Link</summary>
-                            <img src="assets/img//9a4e66ba99531848e9a2f62ec90e87ae.png" alt="Danza demo" class="img-fluid mt-3" width="200" height="100"/>
-                            </details>
-                            
-                        </div>
-                    </div>
-                </div>
+      </div>
 
+      <!-- Ubicaciones -->
+      <div class="footer-locations-col">
+        <h5 class="footer-col-title">Ubicaciones</h5>
+        <ul class="footer-locations" aria-label="Ubicaciones">
+          <li>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            CABA, Buenos Aires
+          </li>
+          <li>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+            San Martín, Neuquén
+          </li>
+        </ul>
+      </div>
 
-            </div>
-        </section>
-        <!-- Signup-->
-        <section class="signup-section" id="signup">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-10 col-lg-8 mx-auto text-center">
-                        <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                        <h2 class="text-white mb-5">Contactate!</h2>
-                    </div>
-                </div>
-            </div>
-        </section>
+    </div>
 
-        <!-- Contact-->
-        <section class="contact-section bg-black" >
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5">
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Direccion</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">Rudecindo Roca, San Martin de los Andes, Neuquen</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-envelope text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Email</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50"><a href="mailto:tuwebsma@gmail.com">tuwebsma@gmail.com</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-3 mb-md-0">
-                        <div class="card py-4 h-100">
-                            <div class="card-body text-center">
-                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
-                                <h4 class="text-uppercase m-0">Telefono</h4>
-                                <hr class="my-4 mx-auto" />
-                                <div class="small text-black-50">+54 9 (294) 467-3511</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="social d-flex justify-content-center">
-                    <a class="mx-2" href="https://www.instagram.com/tuweb_sma/"><i class="fab fa-instagram"></i></a>
-                    <a class="mx-2"  href="https://github.com/tuwebsma"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-        <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Tu Web SMA</div></footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© 2025 <a href="#page-top">Tu Web SMA</a> · Hecho con <span aria-label="amor">❤️</span> en Argentina</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== SCRIPTS ===================== -->
+  <script>
+    // Navbar scroll effect
+    const nav = document.getElementById('mainNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu on link click
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+
+</body>
 </html>
