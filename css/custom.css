@@ -1336,6 +1336,387 @@ body.modal-open {
 }
 
 /* ============================================================
+   NUEVO DISEÑO DE MODALES - CARRUSEL + INFORMACIÓN
+   ============================================================ */
+
+/* Modal más ancho para permitir dos columnas */
+.tws-modal-dialog {
+  width: 100%;
+  max-width: 1100px;
+  max-height: calc(100vh - 2rem);
+}
+
+/* Cuerpo del modal dividido en dos columnas */
+.tws-modal-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+
+  display: grid;
+
+  grid-template-columns: minmax(0, 1.25fr) minmax(330px, 0.75fr);
+
+  grid-template-areas:
+    "carousel description"
+    "carousel download";
+
+  gap: 1.5rem;
+
+  align-items: stretch;
+}
+
+/* Descripción: columna derecha arriba */
+.tws-modal-desc {
+  grid-area: description;
+
+  margin: 0;
+  align-self: start;
+
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+/* Carrusel: columna izquierda */
+.tws-carousel {
+  grid-area: carousel;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  background: #030a14;
+  border: 1px solid rgba(55, 92, 140, 0.25);
+
+  display: flex;
+  align-items: stretch;
+}
+
+/* Área donde aparece la imagen */
+.tws-carousel-track {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  min-height: 520px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+/* Cada slide */
+.tws-carousel-slide {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  transform: scale(0.97);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 1.5rem 3.5rem 4rem;
+  box-sizing: border-box;
+}
+
+/* Slide activo */
+.tws-carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+
+  position: relative;
+}
+
+/* IMAGEN COMPLETA */
+.tws-carousel-slide img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  max-width: 100%;
+  max-height: calc(100% - 3rem);
+
+  object-fit: contain;
+
+  border-radius: 14px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+/* Texto debajo de la imagen */
+.tws-carousel-caption {
+  flex-shrink: 0;
+
+  max-width: 90%;
+
+  margin-top: 0.85rem;
+
+  font-size: 0.82rem;
+  font-weight: 500;
+
+  color: rgba(255, 255, 255, 0.85);
+
+  background: rgba(6, 16, 31, 0.85);
+
+  padding: 0.4rem 1rem;
+
+  border-radius: var(--radius-xl);
+
+  border: 1px solid rgba(55, 92, 140, 0.35);
+
+  text-align: center;
+
+  backdrop-filter: blur(8px);
+}
+
+/* Flechas */
+.tws-carousel-btn.prev {
+  left: 12px;
+}
+
+.tws-carousel-btn.next {
+  right: 12px;
+}
+
+/* Tarjeta de descarga: columna derecha abajo */
+.tws-download-card {
+  grid-area: download;
+
+  width: 100%;
+  box-sizing: border-box;
+
+  margin-top: 0;
+
+  align-self: end;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+
+  text-align: center;
+
+  background: rgba(10, 56, 115, 0.18);
+
+  border: 1px solid rgba(55, 92, 140, 0.35);
+
+  border-radius: var(--radius-md);
+
+  padding: 1.25rem;
+}
+
+/* QR */
+.tws-download-qr-wrap {
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  padding: 0.75rem;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(55, 92, 140, 0.35);
+}
+
+.tws-download-qr {
+  width: 140px;
+  height: 140px;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  padding: 4px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+/* Información de descarga */
+.tws-download-info {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 0.55rem;
+}
+
+.tws-download-info h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+
+  color: var(--white);
+
+  margin: 0;
+}
+
+.tws-download-info p {
+  font-size: 0.88rem;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  line-height: 1.55;
+
+  margin: 0;
+}
+
+/* Botón descargar */
+.btn-download-apk {
+  align-self: center;
+}
+
+/* ============================================================
+   TABLET / CELULAR
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  .tws-modal {
+    padding: 0.75rem;
+  }
+
+  .tws-modal-dialog {
+    max-width: 700px;
+    max-height: calc(100vh - 1.5rem);
+  }
+
+  .tws-modal-body {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-areas:
+      "description"
+      "carousel"
+      "download";
+
+    gap: 1rem;
+
+    padding: 1rem;
+  }
+
+  .tws-carousel {
+    min-height: 450px;
+    height: 450px;
+  }
+
+  .tws-carousel-track {
+    min-height: 450px;
+    height: 450px;
+  }
+
+  .tws-carousel-slide {
+    padding: 1rem 3rem 3.5rem;
+  }
+
+  .tws-carousel-slide img {
+    max-width: 100%;
+    max-height: calc(100% - 3rem);
+  }
+
+  .tws-download-card {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .tws-download-info {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .btn-download-apk {
+    align-self: flex-start;
+  }
+}
+
+/* ============================================================
+   CELULARES
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .tws-modal {
+    padding: 0.5rem;
+  }
+
+  .tws-modal-dialog {
+    max-height: calc(100vh - 1rem);
+  }
+
+  .tws-modal-header {
+    padding: 1rem;
+  }
+
+  .tws-modal-body {
+    padding: 0.85rem;
+  }
+
+  .tws-carousel {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .tws-carousel-track {
+    min-height: 380px;
+    height: 380px;
+  }
+
+  .tws-carousel-slide {
+    padding: 0.75rem 2.5rem 3.5rem;
+  }
+
+  .tws-carousel-slide img {
+    max-width: 100%;
+    max-height: calc(100% - 3rem);
+  }
+
+  .tws-download-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tws-download-info {
+    align-items: center;
+    text-align: center;
+  }
+
+  .btn-download-apk {
+    align-self: center;
+  }
+}
+/* ============================================================
    CONTACT
    ============================================================ */
 .contact {
