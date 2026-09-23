@@ -297,7 +297,7 @@
         <p class="section-sub">Una muestra de los trabajos que hemos realizado para nuestros clientes</p>
       </div>
 
-      <div class="grid-2" role="list" aria-label="Proyectos">
+      <div class="grid-2" id="projects-grid" role="list" aria-label="Proyectos">
 
         <!-- BG360 -->
         <article class="project-card animate-on-scroll stagger-1" role="listitem">
@@ -376,7 +376,7 @@
           </div>
         </article>
         <!-- MAIA -->
-        <article class="project-card animate-on-scroll stagger-2" role="listitem">
+        <article class="project-card animate-on-scroll stagger-2 project-hidden" role="listitem">
           <div class="project-img-wrap">
             <img class="project-img" src="assets/img/maia.png" alt="Sitio Web MAIA" loading="lazy" />
           </div>
@@ -385,7 +385,7 @@
             <h4>Maia Coleto</h4>
             <p>Sitio web de Maia Coleto, diseñado para mostrar información personal, emprendimientos y proyectos.</p>
             <div class="project-actions">
-              <a href="https://maiacolleto.com/" target="_blank" rel="noopener"
+              <a href="https://tuwebsma.github.io/maiapagina" target="_blank" rel="noopener"
                 class="project-link" id="maia-link"
                 aria-label="Ver sitio MAIA (abre en nueva pestaña)">
                 Ver sitio web <i class="fas fa-arrow-right" aria-hidden="true"></i>
@@ -395,7 +395,7 @@
         </article>
 
         <!-- Pomodoro -->
-        <article class="project-card animate-on-scroll stagger-3" role="listitem">
+        <article class="project-card animate-on-scroll stagger-3 project-hidden" role="listitem">
           <div class="project-img-wrap">
             <img class="project-img" src="assets/img/ac4aba24-f690-4967-8075-de13ee6b5e55.png" alt="App Pomodoro Timer"
               loading="lazy" />
@@ -415,7 +415,7 @@
         </article>
 
         <!-- NASA -->
-        <article class="project-card animate-on-scroll stagger-4" role="listitem">
+        <article class="project-card animate-on-scroll stagger-4 project-hidden" role="listitem">
           <div class="project-img-wrap">
             <img class="project-img" src="assets/img/nasa.jpg" alt="App Imágenes NASA" loading="lazy" />
           </div>
@@ -433,6 +433,15 @@
           </div>
         </article>
 
+      </div>
+
+      <!-- Botón Ver más / Ver menos proyectos -->
+      <div class="projects-actions">
+        <button type="button" class="btn-toggle-projects" id="toggle-projects-btn"
+          aria-expanded="false" aria-controls="projects-grid">
+          <span class="btn-text">Ver más proyectos</span>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
       </div>
     </div>
   </section>
@@ -756,6 +765,102 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    // ===================== PROJECTS SHOW / HIDE LOGIC =====================
+    const toggleProjectsBtn = document.getElementById('toggle-projects-btn');
+    const projectsGrid = document.getElementById('projects-grid');
+
+    if (toggleProjectsBtn && projectsGrid) {
+      const allProjectCards = Array.from(projectsGrid.querySelectorAll('.project-card'));
+      const initialVisibleCount = 4;
+      const extraProjectCards = allProjectCards.slice(initialVisibleCount);
+
+      // Hide toggle button if there are 4 or fewer projects
+      if (allProjectCards.length <= initialVisibleCount) {
+        if (toggleProjectsBtn.parentElement) {
+          toggleProjectsBtn.parentElement.style.display = 'none';
+        }
+      }
+
+      // Ensure all cards from index 4 onwards start hidden
+      extraProjectCards.forEach(card => {
+        card.classList.add('project-hidden');
+      });
+
+      let isExpanded = false;
+      let isAnimating = false;
+
+      toggleProjectsBtn.addEventListener('click', () => {
+        if (isAnimating) return;
+
+        const btnText = toggleProjectsBtn.querySelector('.btn-text');
+        const btnIcon = toggleProjectsBtn.querySelector('i');
+
+        if (!isExpanded) {
+          // --- EXPAND PROJECTS ---
+          isAnimating = true;
+          isExpanded = true;
+          toggleProjectsBtn.setAttribute('aria-expanded', 'true');
+          if (btnText) btnText.textContent = 'Ver menos proyectos';
+          if (btnIcon) {
+            btnIcon.className = 'fas fa-chevron-up';
+          }
+
+          extraProjectCards.forEach((card, index) => {
+            card.classList.remove('project-hidden', 'project-collapsing');
+            card.classList.add('visible', 'project-revealing');
+            card.style.animationDelay = `${index * 100}ms`;
+          });
+
+          // Allow next interaction after reveal animation completes
+          setTimeout(() => {
+            extraProjectCards.forEach(card => {
+              card.classList.remove('project-revealing');
+              card.style.animationDelay = '';
+            });
+            isAnimating = false;
+          }, extraProjectCards.length * 100 + 550);
+
+        } else {
+          // --- COLLAPSE PROJECTS ---
+          isAnimating = true;
+          isExpanded = false;
+          toggleProjectsBtn.setAttribute('aria-expanded', 'false');
+          if (btnText) btnText.textContent = 'Ver más proyectos';
+          if (btnIcon) {
+            btnIcon.className = 'fas fa-chevron-down';
+          }
+
+          // Smooth scroll to top of projects section without abrupt jumps
+          const projectsSection = document.getElementById('projects');
+          if (projectsSection) {
+            const nav = document.getElementById('mainNav');
+            const navHeight = nav ? nav.offsetHeight : 70;
+            const targetY = projectsSection.getBoundingClientRect().top + window.pageYOffset - (navHeight + 20);
+            window.scrollTo({
+              top: Math.max(0, targetY),
+              behavior: 'smooth'
+            });
+          }
+
+          // Fade out extra cards smoothly before hiding
+          extraProjectCards.forEach(card => {
+            card.classList.remove('project-revealing');
+            card.classList.add('project-collapsing');
+          });
+
+          // After fade-out and scroll starts, apply hidden
+          setTimeout(() => {
+            extraProjectCards.forEach(card => {
+              card.classList.add('project-hidden');
+              card.classList.remove('project-collapsing');
+              card.style.animationDelay = '';
+            });
+            isAnimating = false;
+          }, 320);
+        }
+      });
+    }
 
     // ===================== MODALS LOGIC =====================
     function openModal(modalId) {
